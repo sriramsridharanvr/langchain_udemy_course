@@ -1,0 +1,3 @@
+MODEL_OPENAI_GPT_4O_MINI = "gpt-4o-mini"
+
+PROMPT_HWCHASE17_REACT = "hwchase17/react"

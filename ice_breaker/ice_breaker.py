@@ -2,6 +2,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
+from constants import MODEL_OPENAI_GPT_4O_MINI
 # from langchain_ollama import ChatOllama
 
 from third_parties.linkedin import scrape_linkedin_profile
@@ -20,7 +21,7 @@ def ice_break_with(name: str):
         input_variables=["information"], template=summary_template
     )
 
-    llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
+    llm = ChatOpenAI(temperature=0, model_name=MODEL_OPENAI_GPT_4O_MINI)
     chain = summary_prompt_template | llm | StrOutputParser()
     res = chain.invoke(input={"information": linkedin_data})
     print(res)
